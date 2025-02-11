@@ -3,5 +3,6 @@
 include { hello } from './module'
 
 workflow {
+    scratch = true
     hello()
 }
