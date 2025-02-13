@@ -45,6 +45,20 @@ provisioner: cluster.local/nfs-provisioner-nfs-subdir-external-provisioner
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 ```
+### nextflow-sa.yaml
+```
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"name":"nextflow-sa","namespace":"nextflow"}}
+  creationTimestamp: "2025-02-06T08:45:38Z"
+  name: nextflow-sa
+  namespace: nextflow
+  resourceVersion: "13164"
+  uid: 53ec03bf-3cae-4a95-b74f-5c4662ec03d9
+```
 ### nextflow.config
 ```
 process {
@@ -69,7 +83,6 @@ k8s {
 ```
 ### Запуск
 
-### Kubernetes
 
 ```bash
 $ nextflow kuberun <GIT-URL> -r main -v nextflow-pvc:/mnt -profile kubernetes --outdir /tmp
