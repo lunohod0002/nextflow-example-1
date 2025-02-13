@@ -3,7 +3,7 @@
 ### Проблема: при запуске Nextflow pipeline с помощью Kubernetes возникает ошибка "Process terminated for an unknown reason"
 ### Настройки запуска:
 Настройки kubernetes:  
-Для успешного запуска необходимо создать Persistent Volume Claime (PVC) с режимом доступа ReadWriteMany и указать Storage Class с RWX правами. Также необходимо создать сервсиный аккаунт в одном namespace с PVC.
+Для успешного запуска необходимо создать Persistent Volume Claime (PVC) с режимом доступа ReadWriteMany и указать Storage Class с RWX правами. Также необходимо создать default Service Account.
 ### nextflow-pvc.yaml
 ```
 apiVersion: v1
