@@ -1,5 +1,5 @@
 process hello {
-    container 'ubuntu:20.04'
+    container 'ubuntu:22.04'
     debug true
     
     """
